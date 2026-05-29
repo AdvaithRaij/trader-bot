@@ -1,0 +1,224 @@
+/* Additional responsive styles for the trading dashboard */
+
+/* Overscroll behavior fixes */
+html, body {
+  overscroll-behavior: none;
+  -webkit-overscroll-behavior: none;
+  -ms-overscroll-behavior: none;
+  overscroll-behavior-y: none;
+  -webkit-overscroll-behavior-y: none;
+  -ms-overscroll-behavior-y: none;
+}
+
+/* Ensure consistent background on all devices */
+html {
+  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 25%, #16213e 50%, #0f0f23 100%) !important;
+  background-attachment: fixed !important;
+}
+
+body {
+  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 25%, #16213e 50%, #0f0f23 100%) !important;
+  background-attachment: fixed !important;
+}
+
+/* iOS Safari specific fixes */
+@supports (-webkit-touch-callout: none) {
+  html, body {
+    overscroll-behavior: contain;
+    -webkit-overscroll-behavior: contain;
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  }
+  
+  #root {
+    overflow: auto;
+    height: 100vh;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Market Ticker Animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 120s linear infinite;
+}
+
+.animation-paused {
+  animation-play-state: paused;
+}
+
+/* Mobile ticker adjustments */
+@media (max-width: 640px) {
+  .animate-scroll {
+    animation: scroll 80s linear infinite;
+  }
+}
+
+/* Prevent text selection during sidebar resize */
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Fixed sidebar layout */
+.sidebar-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 50;
+}
+
+/* Main content with sidebar offset */
+.main-content {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: margin-left 300ms ease;
+}
+
+/* Ensure main content doesn't go behind sidebar */
+.main-content-offset {
+  margin-left: var(--sidebar-width, 256px);
+}
+
+/* Prevent layout shifts during sidebar resize */
+.layout-container {
+  display: flex;
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* Ensure text doesn't wrap unnecessarily */
+.text-nowrap-responsive {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Fix for portfolio stats layout */
+.portfolio-stats {
+  min-width: fit-content;
+  flex-shrink: 0;
+}
+
+/* Mobile-first responsive design */
+@media (max-width: 640px) {
+  /* Reduce padding on mobile */
+  .glass-card {
+    padding: 1rem !important;
+  }
+  
+  /* Smaller text on mobile */
+  h1 {
+    font-size: 1.5rem !important;
+  }
+  
+  h2 {
+    font-size: 1.25rem !important;
+  }
+  
+  h3 {
+    font-size: 1.125rem !important;
+  }
+  
+  /* Stack layout on mobile */
+  .mobile-stack {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.75rem !important;
+  }
+  
+  /* Hide elements on mobile */
+  .mobile-hidden {
+    display: none !important;
+  }
+  
+  /* Show elements only on mobile */
+  .mobile-only {
+    display: block !important;
+  }
+  
+  /* Adjust chart heights on mobile */
+  .chart-container {
+    height: 200px !important;
+  }
+  
+  /* Table responsive */
+  .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .table-responsive table {
+    min-width: 600px;
+  }
+}
+
+@media (min-width: 641px) {
+  .mobile-only {
+    display: none !important;
+  }
+}
+
+/* Tablet specific styles */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .glass-card {
+    padding: 1.25rem !important;
+  }
+  
+  .tablet-stack {
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1025px) {
+  .desktop-only {
+    display: block !important;
+  }
+}
+
+/* Touch-friendly targets */
+@media (hover: none) and (pointer: coarse) {
+  button, .clickable {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .touch-friendly {
+    padding: 0.75rem !important;
+  }
+}
+
+/* Prevent horizontal scroll */
+body {
+  overflow-x: hidden;
+}
+
+/* Improve touch scrolling */
+.scroll-container {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Glass effect improvements for mobile */
+@supports (backdrop-filter: blur(12px)) {
+  @media (max-width: 640px) {
+    .glass {
+      backdrop-filter: blur(8px) !important;
+    }
+  }
+}

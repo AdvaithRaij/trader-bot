@@ -1,0 +1,15 @@
+Analyze the sentiment of this financial news/text for intraday trading of {symbol}:
+
+Text: {text}
+
+Provide:
+1. sentiment_score: Sentiment score (-1 to 1, where -1 is very negative, 0 is neutral, 1 is very positive)
+2. intraday_impact: Intraday impact score (0 to 1, how much this affects today's trading)
+3. confidence: Confidence level (0 to 1, how confident you are in this analysis)
+4. reasoning: Brief reasoning (1-2 sentences)
+5. trade_recommendation: Trade recommendation (BUY/SELL/WATCH/AVOID)
+6. risk_level: Risk level (LOW/MEDIUM/HIGH)
+
+Return as JSON with these exact keys.
+Return ONLY valid JSON, no markdown formatting.
+

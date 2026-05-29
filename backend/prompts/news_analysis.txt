@@ -1,0 +1,23 @@
+Analyze this market news article and provide impact assessment:
+
+Title: {title}
+Summary: {summary}
+Source: {source}
+
+Provide a JSON response with:
+1. "impact": overall market impact (HIGH/MEDIUM/LOW)
+2. "sentiment": sentiment (POSITIVE/NEGATIVE/NEUTRAL)
+3. "relatedStocks": array of stock symbols that could be affected (e.g., ["NIFTY", "RELIANCE", "TCS"])
+4. "analysis": 2-3 sentence analysis of how this news impacts the market/stocks
+5. "timeframe": impact timeframe (IMMEDIATE/SHORT_TERM/LONG_TERM)
+6. "relevance": relevance score for intraday trading (0-100)
+   - Consider: recency, market impact, actionability, clarity of information
+   - 90-100: Highly relevant, immediate trading opportunity
+   - 70-89: Moderately relevant, worth monitoring
+   - 50-69: Somewhat relevant, background information
+   - 0-49: Low relevance, general news
+
+Focus on Indian market stocks (NIFTY, BANKNIFTY, major stocks like RELIANCE, TCS, INFY, HDFC, etc.)
+
+Return ONLY valid JSON, no markdown formatting.
+

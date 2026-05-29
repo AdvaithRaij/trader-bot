@@ -1,0 +1,162 @@
+# ============================================
+# SENSITIVE FILES - NEVER COMMIT THESE
+# ============================================
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+*.env.local
+*.env.production
+*.env.development
+
+# API Keys and credentials
+config.py
+*credentials*
+*secret*
+*token.txt
+backend/data/fyers_token.txt
+
+# ============================================
+# LOGS
+# ============================================
+*.log
+logs/
+*.log.*
+fyersApi.log
+fyersDataSocket.log
+fyersRequests.log
+backend/logs/
+backend/*.log
+
+# ============================================
+# PYTHON
+# ============================================
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.Python
+
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+*.egg-info/
+dist/
+build/
+*.egg
+
+# ============================================
+# NODE.JS / FRONTEND
+# ============================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+.pnpm-debug.log*
+
+# Build outputs
+dist/
+build/
+out/
+.next/
+.nuxt/
+.cache/
+
+# ============================================
+# DATABASES
+# ============================================
+# MongoDB binaries and downloads
+mongodb-*/
+*.tgz
+mongosh-*/
+*.zip
+*.tar.gz
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# ============================================
+# IDEs and EDITORS
+# ============================================
+# VSCode
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+
+# Other IDEs
+.DS_Store
+.AppleDouble
+.LSOverride
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# ============================================
+# REACT NATIVE / MOBILE
+# ============================================
+.expo/
+.expo-shared/
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+
+# Android
+*.apk
+*.aab
+android/app/build/
+android/.gradle/
+android/local.properties
+
+# iOS
+ios/Pods/
+ios/build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+*.xccheckout
+*.moved-aside
+DerivedData/
+*.hmap
+*.ipa
+*.xcuserstate
+
+# ============================================
+# TEMPORARY FILES
+# ============================================
+*.tmp
+*.temp
+*.bak
+*.backup
+.cache/
+tmp/
+temp/
+
+# Cleanup scripts
+organize_docs.py

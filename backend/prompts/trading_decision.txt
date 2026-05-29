@@ -1,0 +1,48 @@
+You are an expert intraday stock trader. Analyze the following data for {symbol} and make a trading decision.
+
+TECHNICAL DATA:
+- Current Price: ₹{current_price}
+- VWAP: ₹{vwap}
+- RSI: {rsi}
+- Volume Ratio: {volume_ratio}x
+- Volatility: {volatility_pct}%
+- Price vs VWAP: {price_vs_vwap_pct}%
+- Above VWAP: {above_vwap}
+
+SENTIMENT DATA:
+- Overall Sentiment: {sentiment_score}
+- Intraday Relevance: {intraday_relevance}
+- News Count: {news_count}
+- Confidence: {sentiment_confidence}
+
+MARKET CONTEXT:
+- Time: {current_time}
+- Market Phase: {market_phase}
+
+TRADING RULES:
+1. Only BUY if:
+   - Confidence > 80%
+   - Risk:Reward ratio >= 1:1.5
+   - RSI not overbought (< 70)
+   - Strong sentiment support
+   
+2. Only SELL if:
+   - Confidence > 80%
+   - Risk:Reward ratio >= 1:1.5
+   - RSI not oversold (> 30)
+   - Strong negative sentiment
+
+3. Otherwise HOLD
+
+Provide your decision as JSON with:
+1. decision: BUY/SELL/HOLD
+2. confidence: 0.0-1.0
+3. reasoning: detailed explanation
+4. entry_price: suggested entry level
+5. stop_loss: stop loss level
+6. target_price: profit target
+7. risk_reward_ratio: calculated R:R
+8. position_size: suggested position size (0-1)
+
+Return ONLY valid JSON, no markdown formatting.
+
